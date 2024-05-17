@@ -1,7 +1,7 @@
 
 # MMM-ModulesGroupsRotation
 
-MMM-ModulesGroupsRotation is a MagicMirror² module that groups modules and toggles their visibility over time.
+MMM-ModulesGroupsRotation is a MagicMirror² module that groups modules and toggles their visibility over time. I needed something similar to MMM-pages but I encountered few bugs and decided to create simple version for what I need,
 
 ## Table of Contents
 - [Installation](#installation)
@@ -70,7 +70,7 @@ This module does not have any external dependencies.
 
 ## Developer
 
-This module was developed by [YOUR NAME].
+This module was developed by Mo Ezderman.
 
 ## License
 
