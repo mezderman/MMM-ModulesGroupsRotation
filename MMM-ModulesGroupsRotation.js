@@ -25,18 +25,25 @@ Module.register("MMM-ModulesGroupsRotation", {
         // Hide all modules first with a transition
         this.hideAllModules();
 
+        // fire quickly on startup
+        let animationDelay= this.curGroup == -1?1:this.config.animationDelay
+
         this.curGroup = (this.curGroup + 1) % this.config.modulesGroups.length;
         Log.log(`this.curGroup:`, this.curGroup);
 
+        // get the timeout for this group , start with the default
         this.timeout_delay=this.config.rotationTime
+        // loop thru the list of specified group timeouts
         for(group of groupDelay){
+            // if the group number is not negative, and it matches the currennt group
             if((group.groupNumber>0) && ((group.groupNumber-1) == this.curGroup)){
+                // get its delay time
                 this.timeout_delay=group.timeout
+                // break loop, only one for this group
                 break;
             }
         }
-        // fire quickly on startup
-        let animationDelay= this.curGroup == 0?1:this.config.animationDelay
+
         // Show modules in the current group after a short delay to allow hide transition to complete
         setTimeout(() => {
             this.showCurrentGroup()
