@@ -47,9 +47,14 @@ The following properties can be configured:
 
 | Option           | Description                                                                          | Default |
 |------------------|--------------------------------------------------------------------------------------|---------|
-| `modulesGroups`  | An array of arrays containing the names of modules to group and rotate through.      | `[]`    |
+| `modulesGroups`  | An array of arrays containing the names of modules to group and rotate through.      | `[[]]`  |
 | `rotationTime`   | Time in milliseconds between module rotations.                                       | `3000`  |
 | `animationDelay` | Time in milliseconds for the fade in/out animation when toggling module visibility.  | `1000`  |
+| `groupDelay`     | array of structures,  enable different timeouts for different groups  |  `[]`  |
+|| groupNumber starts at 1 for the first group, timeout is in milliseconds ||    
+|| { groupNumber: n, timeout: mmmmm }||
+|| { groupNumber:5, timeout:5\*60\*1000}  // 5th group , timeout is 5 minutes ||
+          
 
 Example configuration:
 

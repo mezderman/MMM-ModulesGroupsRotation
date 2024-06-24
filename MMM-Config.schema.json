@@ -1,0 +1,169 @@
+{
+  "schema": {
+    "MMM-ModulesGroupsRotation": {
+      "type": "object",
+      "title": "properties for MMM-ModulesGroupsRotation",
+      "properties": {
+        "module": {
+          "type": "string",
+          "title": "module",
+          "default": "MMM-ModulesGroupsRotation",
+          "readonly": true
+        },
+        "disabled": {
+          "type": "boolean",
+          "title": "disabled",
+          "default": false
+        },
+        "position": {
+          "type": "string",
+          "title": "module position",
+          "readonly": "true"
+        },
+        "classes": {
+          "type": "string",
+          "title": "classes",
+          "default": ""
+        },
+        "order": {
+          "type": "string",
+          "title": "order",
+          "default": "*"
+        },
+        "inconfig": {
+          "type": "string",
+          "title": "inconfig",
+          "default": "0"
+        },
+        "index": {
+          "type": "integer"
+        },
+        "config": {
+          "type": "object",
+          "title": "config",
+          "properties": {
+            "modulesGroups": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "rotationTime": {
+              "type": "integer"
+            },
+            "animationDelay": {
+              "type": "integer"
+            },
+            "groupDelay": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "groupNumber": {
+                    "type": "integer"
+                  },
+                  "timeout": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "form": [
+    {
+      "key": "MMM-ModulesGroupsRotation.disabled",
+      "htmlClass": "disabled_checkbox",
+      "description": "when checked the module will not be used by MagicMirror<br> but will remain in config.js if already present"
+    },
+    {
+      "key": "MMM-ModulesGroupsRotation.position",
+      "description": "use Module Positions section below to set or change"
+    },
+    {
+      "key": "MMM-ModulesGroupsRotation.classes",
+      "description": "css classes to use for this module, beyond what MM provides"
+    },
+    {
+      "key": "MMM-ModulesGroupsRotation.order",
+      "type": "hidden"
+    },
+    {
+      "key": "MMM-ModulesGroupsRotation.inconfig",
+      "type": "hidden"
+    },
+    {
+      "key": "MMM-ModulesGroupsRotation.index",
+      "type": "hidden"
+    },
+    {
+      "type": "fieldset",
+      "title": "config",
+      "items": [
+        {
+          "type": "array",
+          "title": "modulesGroups",
+          "items": {
+            "type": "array",
+            "title": "group module name or classname list {{idx}}",
+            "items": [
+              {
+                "title": "module or class name {{idx}}",
+                "key": "MMM-ModulesGroupsRotation.config.modulesGroups[][]"
+              }
+            ]
+          }
+        },
+        {
+          "title": "rotationTime",
+          "key": "MMM-ModulesGroupsRotation.config.rotationTime"
+        },
+        {
+          "title": "animationDelay",
+          "key": "MMM-ModulesGroupsRotation.config.animationDelay"
+        },
+        {
+          "type": "array",
+          "title": "group module display time list",
+          "deleteCurrent": false,
+          "items": {
+            "type": "fieldset",
+            "title": "groupDelay",
+            "items": [
+              {
+                "title": "groupNumber",
+                "key": "MMM-ModulesGroupsRotation.config.groupDelay[].groupNumber"
+              },
+              {
+                "title": "timeout",
+                "key": "MMM-ModulesGroupsRotation.config.groupDelay[].timeout"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "value": {
+    "disabled": true,
+    "module": "MMM-ModulesGroupsRotation",
+    "position": "none",
+    "order": "*",
+    "inconfig": "0",
+    "config": {
+      "modulesGroups": [
+        [
+        ]
+      ],
+      "rotationTime": 3000,
+      "animationDelay": 1000,
+      "groupDelay": []
+    }
+  }
+}
